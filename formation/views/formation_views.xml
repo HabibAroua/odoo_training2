@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Tree -->
+    <record model="ir.ui.view" id="module_tree_view">
+        <field name="name">module.module.tree</field>
+        <field name="model">module.module</field>
+        <field name="tree">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Modules">
+                <field name="name" />
+                <field name="code" />
+                <field name="section_id" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record model="ir.ui.view" id="module_form_view">
+        <field name="name">module.module.form</field>
+        <field name="model">module.module</field>
+        <field name="tree">tree</field>
+        <field name="arch" type="xml">
+            <form string="Modules">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="section_id" />
+                        </group>
+                        <group>
+                            <field name="code" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action view -->
+    <record model="ir.actions.act_window" id="module_action_view">
+        <field name="name">Module</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">module.module</field>
+        <field name="view_type">form</field>
+        <field name="view_mode"> tree, form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="module_root" name="Formation" />
+    <menuitem id="module_root_menu" parent="module_root" name="Université"/>
+    <menuitem id="module_menu" name="Module" parent="module_root_menu" action="module_action_view"/>
+
+</odoo>
