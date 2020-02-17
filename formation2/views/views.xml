@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="formation2.list">
+      <field name="name">formation2 list</field>
+      <field name="model">formation2.formation2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="formation2.action_window">
+      <field name="name">formation2 window</field>
+      <field name="res_model">formation2.formation2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record model="ir.actions.server" id="formation2.action_server">
+      <field name="name">formation2 server</field>
+      <field name="model_id" ref="model_formation2_formation2"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+
+
+    <menuitem name="formation2" id="formation2.menu_root"/>
+
+
+    <menuitem name="Menu 1" id="formation2.menu_1" parent="formation2.menu_root"/>
+    <menuitem name="Menu 2" id="formation2.menu_2" parent="formation2.menu_root"/>
+
+    <menuitem name="List" id="formation2.menu_1_list" parent="formation2.menu_1"
+              action="formation2.action_window"/>
+    <menuitem name="Server to list" id="formation2" parent="formation2.menu_2"
+              action="formation2.action_server"/>
+
+  </data>
+</odoo>

@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-class app(models.Model):
-    _name = 'app.app'
+class formation2(models.Model):
+    _name = 'formation2.formation2'
 
     name = fields.Char()
     value = fields.Integer()
