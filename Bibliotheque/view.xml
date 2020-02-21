@@ -11,6 +11,7 @@
                         <field name="description"/>
                         <field name="author_name"/>
                         <field name="book_id"/>
+                        <field name="publisher_id"/>
                     </group>
                     <group>
                         <field name="book_release_date"/>
