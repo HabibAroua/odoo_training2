@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
     <!-- Tree -->
     <record model="ir.ui.view" id="module_tree_view">
         <field name="name">module.module.tree</field>
         <field name="model">module.module</field>
-        <field name="tree">tree</field>
+        <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="Modules">
                 <field name="name" />
                 <field name="code" />
                 <field name="section_id" />
-                <field name="description" />
+                <!--<field name="description" /> -->
             </tree>
         </field>
     </record>
@@ -20,7 +19,7 @@
     <record model="ir.ui.view" id="module_form_view">
         <field name="name">module.module.form</field>
         <field name="model">module.module</field>
-        <field name="tree">tree</field>
+        <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Modules">
                 <sheet>
@@ -35,7 +34,7 @@
                     </group>
                     <notebook>
                         <page string="Description">
-                            <field name="description" />
+                            <!--<field name="description" /> -->
                         </page>
                     </notebook>
 
@@ -52,6 +51,7 @@
         <field name="view_type">form</field>
         <field name="view_mode"> tree, form</field>
     </record>
+    odoo
 
     <!-- Menu -->
     <menuitem id="module_root" name="Formation" />

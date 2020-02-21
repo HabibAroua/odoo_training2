@@ -1,5 +1,5 @@
 {
-    'name': "Formation Odoo c Version 11",
+    'name': "Exemple de bib",
     'version':'1.0',
     'author':'Habib Aroua Sesame',
     'website':'http://www.habib_aroua.com',
@@ -7,7 +7,7 @@
     'license':'AGPL-3',
     'complexity':'easy',
     'sequence':1,
-    'summary': """ERP Odoo Slnee""",
+    'summary': """Bib""",
 
     'description': """
         Habib dev Odoo
@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/formation_views.xml',
+        'view.xml',
         #'views/templates.xml',
     ],
     # only loaded in demonstration mode
