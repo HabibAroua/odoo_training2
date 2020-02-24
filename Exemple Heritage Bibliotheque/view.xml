@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_form_biblio_inherited" model="ir.ui.view">
+            <field name="name">Heritage biblio – ajout nombre de pages</field>
+            <field name="model">biblio.livre</field>
+            <field name="inherit_id" ref="Bibliotheque de test.library_book_view_form"/>
+            <field name="arch" type="xml">
+                <field name="description" position="after">
+                    <field name="pages_number"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="livre_action">
+            <field name="name">Document</field>
+            <field name="res_model">biblio.livre</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Créer le premier livre de cette bibliotheque
+            </p>
+            </field>
+        </record>
+        <menuitem id="main_menu" name="H-BiblioTest"/>
+            <menuitem id="Livre_menu" name="H-LivreTest"
+        parent="main_menu"/>
+        <menuitem id="ouvrage_menu" name="H-Ouvrage" parent="Livre_menu"
+        action="livre_action"/>
+    </data>
+</odoo>

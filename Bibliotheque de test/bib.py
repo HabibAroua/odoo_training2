@@ -1,9 +1,11 @@
 from odoo import models, fields, api
 
 class Document(models.Model):
-     _name = 'biblioth.livre'
+
+     _name = 'biblio.livre'
      name = fields.Char(string="Titre", required=True)
      description = fields.Text()
+
      #author_name = fields.Char(string='NomAuteur', required=True)
      author_name = fields.Many2many('res.partner', string='Auteurs')
      book_id = fields.Integer(string='ID dulivre', required=True)

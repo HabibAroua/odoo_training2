@@ -1,5 +1,5 @@
 {
-    'name': "Exemple de bib",
+    'name': "Heritage Exemple bibliotheque",
     'version':'1.0',
     'author':'Habib Aroua Sesame',
     'website':'http://www.habib_aroua.com',
