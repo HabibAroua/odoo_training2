@@ -2,7 +2,8 @@ from odoo import models, fields, api
 
 class Document(models.Model):
 
-     _name = 'biblio.livre'
+     _name = 'biblio.livre' # le nom de table dans la base de donneé
+
      name = fields.Char(string="Titre", required=True)
      description = fields.Text()
 
