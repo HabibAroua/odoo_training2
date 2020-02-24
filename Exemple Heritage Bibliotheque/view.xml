@@ -47,6 +47,7 @@
                 </graph>
             </field>
         </record>
+
         <record model="ir.ui.view" id="livre_kanban_view">
             <field name="name">VueKanbanlivre</field>
             <field name="model">biblio.livre</field>
@@ -72,6 +73,8 @@
                 </kanban>
             </field>
         </record>
+
+        <!-- Menu -->
         <menuitem id="main_menu" name="H-BiblioTest"/>
         <menuitem id="Livre_menu" name="H-LivreTest" parent="main_menu"/>
         <menuitem id="inscriptiontest_menu" name="H-Inscriptiontest" parent="main_menu"/>
