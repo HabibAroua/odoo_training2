@@ -29,19 +29,16 @@
             </field>
         </record>
         <record model="ir.actions.act_window" id="situation_action">
-            <field name="name">Document</field>
+            <field name="name">LibrairieGeneral</field>
             <field name="res_model">biblioo.general</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Donnerla situation delabibliotheque
                 </p>
             </field>
         </record>
-
         <!-- -->
-
-
 
         <!-- Livre Action -->
         <record model="ir.actions.act_window" id="livre_action">
@@ -71,15 +68,12 @@
         <record model="ir.actions.act_window" id="exemple_action">
             <field name="name">Hello world</field>
             <field name="res_model">biblioo.inscription</field>
-            <field name="view_type">form</field>
+            <field name="view_type">tree</field>
             <field name="view_mode">tree,form,calendar,graph,kanban</field>
             <field name="help" type="html">
             <p class="oe_view_nocontent_create">Hello world</p>
             </field>
         </record>
-
-
-
 
         <record id="calendar_inscription" model="ir.ui.view">
             <field name="model">biblioo.inscription</field>
@@ -88,6 +82,7 @@
                 </calendar>
             </field>
         </record>
+
         <record model="ir.ui.view" id="livres_lus_graph_view">
             <field name="name">biblioo.inscription.graph</field>
             <field name="model">biblioo.inscription</field>
