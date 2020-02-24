@@ -10,4 +10,4 @@ class InscriptionBiblio(models.Model):
      date_debut_inscription = fields.Date(string='Date inscription utilisateur')
      date_fin_inscription = fields.Date(string='Date fin inscription utilisateur')
      nombre_livres_lus = fields.Integer(string='Le nombre de livres lus par utilisateur')
-     
+     prix = fields.Float(string="Le prix en DT")
