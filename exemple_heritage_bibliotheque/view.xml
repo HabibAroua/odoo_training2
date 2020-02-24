@@ -80,5 +80,6 @@
         <menuitem id="inscriptiontest_menu" name="H-Inscriptiontest" parent="main_menu"/>
         <menuitem id="ouvrage_menu" name="H-Ouvrage" parent="Livre_menu" action="livre_action"/>
         <menuitem id="inscription_menu" name="H-Inscription" parent="inscriptiontest_menu" action="inscription_action"/>
+        
     </data>
 </odoo>
