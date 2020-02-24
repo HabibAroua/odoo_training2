@@ -7,24 +7,75 @@
             <field name="inherit_id" ref="Bibliotheque de test.library_book_view_form"/>
             <field name="arch" type="xml">
                 <field name="description" position="after">
-                    <field name="pages_number"/>
+                    <field name="pages_number"/></field>
                 </field>
-            </field>
         </record>
         <record model="ir.actions.act_window" id="livre_action">
             <field name="name">Document</field>
             <field name="res_model">biblio.livre</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Créer le premier livre de cette bibliotheque
+                <p class="oe_view_nocontent_create">Créer le premier livre de cette bibliotheque</p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="inscription_action">
+            <field name="name">Inscription</field>
+            <field name="res_model">biblioo.inscription</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph,kanban</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Enregistrer les inscriptions des utilisateurs
+            de bibliotheque
             </p>
             </field>
         </record>
+        <record id="calendar_inscription" model="ir.ui.view">
+            <field name="model">biblioo.inscription</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date_debut_inscription" date_stop="date_fin_inscription" color="nom_utilisateur">
+                </calendar>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="livres_lus_graph_view">
+            <field name="name">biblioo.inscription.graph</field>
+            <field name="model">biblioo.inscription</field>
+            <field name="arch" type="xml">
+                <graph string="Nombre de livres lus par utilsateur">
+                    <field name="nom_utilisateur"/>
+                    <field name="nombre_livres_lus" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="livre_kanban_view">
+            <field name="name">VueKanbanlivre</field>
+            <field name="model">biblio.livre</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_resource_vignette">
+                                <div class="oe_resource_image">
+                                    <a type="edit"><img t-att-src="kanban_image('biblio.livre', 'photo',record.id.value)" class="oe_resource_picture"/></a>
+                                </div>
+                                <div class="oe_resource_details">
+                                    <ul>
+                                        <li><field name="name"/></li>
+                                        <li><field name="description"/></li>
+                                        <li><field name="book_genre"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
         <menuitem id="main_menu" name="H-BiblioTest"/>
-            <menuitem id="Livre_menu" name="H-LivreTest"
-        parent="main_menu"/>
-        <menuitem id="ouvrage_menu" name="H-Ouvrage" parent="Livre_menu"
-        action="livre_action"/>
+        <menuitem id="Livre_menu" name="H-LivreTest" parent="main_menu"/>
+        <menuitem id="inscriptiontest_menu" name="H-Inscriptiontest" parent="main_menu"/>
+        <menuitem id="ouvrage_menu" name="H-Ouvrage" parent="Livre_menu" action="livre_action"/>
+        <menuitem id="inscription_menu" name="H-Inscription" parent="inscriptiontest_menu" action="inscription_action"/>
     </data>
 </odoo>
