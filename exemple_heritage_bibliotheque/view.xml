@@ -32,7 +32,7 @@
         <record model="ir.actions.act_window" id="situation_action">
             <field name="name">LibrairieGeneral</field>
             <field name="res_model">biblioo.general</field>
-            <field name="view_type">form</field>
+            <field name="view_type">tree</field>
             <field name="view_mode">tree,form,kanban,graph</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
@@ -61,9 +61,9 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar,graph,kanban</field>
             <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Enregistrer les inscriptions des utilisateurs
-            de bibliotheque
-            </p>
+                <p class="oe_view_nocontent_create">
+                    Enregistrer les inscriptions des utilisateurs de bibliotheque
+                </p>
             </field>
         </record>
 
@@ -134,5 +134,7 @@
         <menuitem id="inscription_menu" name="H-Inscription" parent="inscriptiontest_menu" action="inscription_action"/>
         <menuitem id="inscription_menu1" name="H-Inscription1" parent="inscriptiontest_menu" action="exemple_action"/>
         <menuitem id="situation_menu" name="H-Situation" parent="Livre_menu" action="situation_action"/>
+        <!-- -->
+
     </data>
 </odoo>

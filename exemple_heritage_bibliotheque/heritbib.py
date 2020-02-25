@@ -25,4 +25,14 @@ class LibrairieGeneral(models.Model):
         self.taken_books_percentage=self.number_of_books_out/self.total_number_of_books*100\
             if self.total_number_of_books!= 0 else 0
 
-
+    @api.onchange('total_number_of_books', 'number_of_books_out')
+    def _books_logic_error(self):
+        if self.total_number_of_books < self.number_of_books_out:
+            return \
+            {
+                'warning':
+                 {
+                    'title': "Erreur de saisie",
+                    'message': "Le nombre total des livres de la bibliotheque doit etre supérieur au nombre de livres sortis",
+                 },
+            }
