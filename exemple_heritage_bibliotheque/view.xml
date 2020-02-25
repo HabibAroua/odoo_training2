@@ -150,6 +150,27 @@
         </record>
         <!-- -->
 
+         <!--Wizard -->
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">biblioo.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Réinscrire utilisateur">
+                    <group>
+                        <field name="nom_inscrit"/>
+                        <field name="Date_reinscription"/>
+                        <field name="Date_finscription"/>
+                    </group>
+                    <footer>
+                        <button name='action_reinscrire' string='Réinscrire Utilisateur' class='oe_highlight' type='object'/>
+                         or
+                        <button string='Cancel' class='btn-default' special='cancel'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- -->
+
         <!-- Menu -->
         <menuitem id="main_menu" name="H-BiblioTest"/>
         <menuitem id="Livre_menu" name="H-LivreTest" parent="main_menu"/>
@@ -159,6 +180,14 @@
         <menuitem id="inscription_menu1" name="H-Inscription1" parent="inscriptiontest_menu" action="exemple_action"/>
         <menuitem id="situation_menu" name="H-Situation" parent="Livre_menu" action="situation_action"/>
         <!-- -->
+
+        <act_window id="launch_book_wizard"
+                    name="Reinscire utilisateur"
+                    src_model="biblioo.inscription"
+                    res_model="biblioo.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
 
     </data>
 </odoo>
