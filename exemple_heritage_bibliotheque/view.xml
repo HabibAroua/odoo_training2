@@ -126,6 +126,30 @@
             </field>
         </record>
 
+        <!-- workflow -->
+        <record model="ir.ui.view" id="Workflow_buttons">
+            <field name="name">inscription.form</field>
+            <field name="model">biblioo.inscription</field>
+            <field name="arch" type="xml">
+                <form string="Inscription Form">
+                    <header>
+                        <button name="action_noninscrit" type="object" string="Mettre fin à l'inscription de cet utilsateur" states="inscrit"/>
+                        <button name="action_inscrit" type="object" string="Inscrire cet utilisateur" states="non_inscrit" class="oe_highlight"/>
+                     </header>
+                     <group>
+                         <field name="nom_utilisateur"/>
+                         <field name="date_debut_inscription"/>
+                         <field name="date_fin_inscription"/>
+                         <field name="nombre_livres_lus"/>
+                    </group>
+                    <group>
+                        <field name="state"/>
+                    </group>
+                 </form>
+            </field>
+        </record>
+        <!-- -->
+
         <!-- Menu -->
         <menuitem id="main_menu" name="H-BiblioTest"/>
         <menuitem id="Livre_menu" name="H-LivreTest" parent="main_menu"/>

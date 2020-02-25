@@ -16,6 +16,14 @@ class DocumentHeritage(models.Model): #Toute les classes d'odoo herite de la cla
                 raise models.ValidationError(
                     'La date de sortie doit etre dans le passe')
 
+    @api.constrains('name')
+    def _Verifier_author_name(self):
+        for r in self:
+            if self.name == '':
+                raise models.ValidationError('Author est vide !!!!!')
+
+
+
 class InscriptionBiblio(models.Model):
      _name = 'biblioo.inscription'
      nom_utilisateur = fields.Many2one('res.users', string='Utilisateur Bibliotheque', )
@@ -24,6 +32,28 @@ class InscriptionBiblio(models.Model):
      nombre_livres_lus = fields.Integer(string='Le nombre de livres lus par utilisateur')
      prix = fields.Float(string="Le prix en DT")
      prix_uniatire=fields.Float(string="Le prix unitaire")
+
+     state = fields.Selection\
+     (
+             [
+                 ('inscrit', "Inscrit"),
+                 ('non_inscrit', "Non inscrit"),
+                 ('redouble' , "Redoublant"),
+             ], default='non_inscrit'
+     )
+
+     @api.multi
+     def action_inscrit(self):
+         self.state = 'inscrit'
+
+     @api.multi
+     def action_noninscrit(self):
+         self.state = 'non_inscrit'
+
+    #@api.multi
+    #def action_redouble(self):
+        #self.state = 'redouble'
+
 
 class LibrairieGeneral(models.Model):
     _name = 'biblioo.general'

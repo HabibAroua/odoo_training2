@@ -33,8 +33,8 @@ class Document(models.Model):
                     raise models.ValidationError(
                          'La date de sortie doit etre dans le passe')
 
-     @api.constrains('author_name')
-     def _Verifier_author_name(self):
+     @api.constrains('description')
+     def _Verifier_description(self):
           for r in self:
-               if self.author_name == '':
-                    raise  models.ValidationError('Author est vide !!!!!')
+               if (self.description == ''):
+                    raise models.ValidationError('Description est vide')
