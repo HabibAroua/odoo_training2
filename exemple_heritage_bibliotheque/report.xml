@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report id="report_inscription" model="biblio.inscription"
+                string="Inscription Report"
+                name="Exemple Heritage Bibliotheque.report_inscription_view"
+                file="Exemple Heritage Bibliotheque.report_inscription"
+                report_type="qweb-pdf"
+        />
+        <template id="report_inscription_view">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <h2 t-field="doc.nom_utilisateur"/>
+                            <t t-if="doc.state== 'inscrit' ">
+                                <span>Inscrit le</span>
+                                <span tfield="doc.date_debut_inscription"/>
+                            </t>
+                            <t t-else="">
+                                <span>Non inscrit</span>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
