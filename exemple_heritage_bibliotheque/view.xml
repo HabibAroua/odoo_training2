@@ -11,6 +11,24 @@
                     <field name="pages_number"/></field>
                 </field>
         </record>
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">biblioo.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Réinscrire utilisateur">
+                    <group>
+                        <field name="nom_inscrit"/>
+                        <field name="Date_reinscription"/>
+                        <field name="Date_finscription"/>
+                    </group>
+                    <footer>
+                        <button name='action_reinscrire' string='Réinscrire Utilisateur' class='oe_highlight' type='object'/>
+                         or
+                        <button string='Cancel' class='btn-default' special='cancel'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
 
           <!-- for the calculate fields -->
         <record id="library_situation_view_form" model="ir.ui.view">
@@ -151,6 +169,7 @@
         <!-- -->
 
          <!--Wizard -->
+        <!--
         <record model="ir.ui.view" id="wizard_form_view">
             <field name="name">wizard.form</field>
             <field name="model">biblioo.wizard</field>
@@ -168,7 +187,7 @@
                     </footer>
                 </form>
             </field>
-        </record>
+        </record> -->
         <!-- -->
 
         <!-- Menu -->

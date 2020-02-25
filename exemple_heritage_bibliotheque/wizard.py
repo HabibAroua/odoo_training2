@@ -2,7 +2,7 @@ from odoo import models, fields, api
 
 class Wizard(models.TransientModel):
     _name= 'biblioo.wizard'
-
+    nom_inscrit = fields.Char(string="name inscrit")
     Date_reinscription = fields.Date('Date reinscription')
     Date_finscription = fields.Date('Nouvelle date de fin inscription')
 
