@@ -8,9 +8,10 @@
             <field name="inherit_id" ref="Bibliotheque de test.library_book_view_form"/>
             <field name="arch" type="xml">
                 <field name="description" position="after">
-                    <field name="pages_number"/></field>
-                </field>
+                <field name="pages_number"/></field>
+            </field>
         </record>
+
         <record model="ir.ui.view" id="wizard_form_view">
             <field name="name">wizard.form</field>
             <field name="model">biblioo.wizard</field>

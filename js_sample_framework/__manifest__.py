@@ -1,22 +1,19 @@
 {
-    'name': "Heritage Exemple bibliotheque",
+    'name': "JS Framework",
     'version':'1.0',
-    'author':'Habib Aroua Sesame',
+    'author':'Habib Aroua',
     'website':'http://www.habib_aroua.com',
     'support':'habib.aroua@sesame.com.tn',
     'license':'AGPL-3',
     'complexity':'easy',
     'sequence':1,
-    'summary': """Bib""",
+    'summary': """first JS Framework""",
 
     'description': """
-        Habib dev Odoo
-        module1
-        module2
-        module3
+        this is my first odoo module using JS
     """,
 
-    'category': 'Formation',
+    'category': 'JavaScript',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -25,9 +22,9 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'view.xml',
+        #'view.xml',
         #'report.xml'
-        #'views/templates.xml',
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
