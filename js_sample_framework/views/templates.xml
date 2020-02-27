@@ -11,7 +11,8 @@
                 <div class="container">
                     <form method="POST" action="/test/path">
                         Hey subscriber
-                        Name : <input type="number" name="a1" id="a1" />
+                        x1 : <input type="number" name="a1" id="a1" />
+                        x2 : <input type="number" name="a2" id="a2" />
                         <br></br>
                         <button onclick="add()">Click</button>
                     </form>

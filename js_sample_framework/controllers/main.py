@@ -15,7 +15,11 @@ class Doc(http.Controller):
     def test_path(self, **kw):
         # here in kw you can get the inputted value
         print (kw['a1'])
-        return kw['a1']
+        x1=int(kw['a1'])
+        x2=int(kw['a2'])
+        x= x1+x2
+        print ('the sum is ',x)
+        return 'The sum is '+str(x)
 
 
     @http.route('/custom/url' , website=True , auth='public')
