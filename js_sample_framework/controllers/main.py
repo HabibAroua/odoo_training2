@@ -14,7 +14,6 @@ class Doc(http.Controller):
     @http.route('/test/path', type='http', methods=['POST'],csrf=False)
     def test_path(self, **kw):
         # here in kw you can get the inputted value
-        print (kw['a1'])
         x1=int(kw['a1'])
         x2=int(kw['a2'])
         x= x1+x2
