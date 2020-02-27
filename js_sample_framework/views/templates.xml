@@ -6,17 +6,15 @@
                 <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
             </xpath>
         </template>
-
-        <template id="new_web_page" name="Habib">
-            <xpath expr="." position="inside">
-                <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
-            </xpath>
+        <template id="new_web_page" name="Habib" >
             <t t-call="website.layout">
                 <div class="container">
-                    Hey subscriber
-                    Name : <input type="number" name="a1" id="a1" />
-                    <br></br>
-                    <button onclick="click()">Click</button>
+                    <form method="POST" action="/test/path">
+                        Hey subscriber
+                        Name : <input type="number" name="a1" id="a1" />
+                        <br></br>
+                        <button onclick="add()">Click</button>
+                    </form>
                 </div>
             </t>
         </template>

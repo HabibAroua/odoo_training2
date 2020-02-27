@@ -11,10 +11,11 @@ class Doc(http.Controller):
     def funct(self, **kw):
         return "Holal Amigos"
 
-    @http.route('/test/path', type='http', methods=['GET'],csrf=False)
+    @http.route('/test/path', type='http', methods=['POST'],csrf=False)
     def test_path(self, **kw):
         # here in kw you can get the inputted value
-        print (kw['name'])
+        print (kw['a1'])
+        return kw['a1']
 
 
     @http.route('/custom/url' , website=True , auth='public')
