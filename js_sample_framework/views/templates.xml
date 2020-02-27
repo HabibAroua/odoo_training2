@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <data>
+
         <template id="assets_backend" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
                 <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
             </xpath>
         </template>
-    </data>
+
+        <template id="new_web_page" name="Habib">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
+            </xpath>
+            <t t-call="website.layout">
+                <div class="container">
+                    Hey subscriber
+                    Name : <input type="number" name="a1" id="a1" />
+                    <br></br>
+                    <button onclick="click()">Click</button>
+                </div>
+            </t>
+        </template>
+
 </odoo>
