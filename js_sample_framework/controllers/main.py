@@ -20,8 +20,19 @@ class Doc(http.Controller):
         x= x1+x2
         print ('the sum is ',x)
         print ('operation is ',op)
-        return 'The sum is '+str(x)
 
+        try:
+            if(op == '+'):
+                x=x1+x2
+            elif(op == '-'):
+                x=x1-x2
+            elif(op == '*'):
+                x=x1*x2
+            elif(op == '/'):
+                x=x1/x2
+            return 'The sum is '+str(x)
+        except:
+            return "We can't devise a null value"
 
     @http.route('/custom/url' , website=True , auth='public')
     def show_custom_webpage(self, **kw):
