@@ -9,13 +9,38 @@
         <template id="new_web_page" name="Habib" >
             <t t-call="website.layout">
                 <div class="container">
-                    <form method="POST" action="/test/path">
-                        Hey subscriber
-                        x1 : <input type="number" name="a1" id="a1" />
-                        x2 : <input type="number" name="a2" id="a2" />
-                        <br></br>
-                        <button onclick="add()">Click</button>
-                    </form>
+                    <center>
+                        <div>
+                            <form method="POST" action="/test/path" id="panda" name = "myForm">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><center>Calculate</center></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="number" name="a1" id="a1" placeholder="Number 1" class="form-control"  /></td>
+                                        <td><input type="number" name="a2" id="a2" placeholder="Number 2" class="form-control"  /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <select name="op" class="form-control">
+                                                <option value="+">+</option>
+                                                <option value="-">-</option>>
+                                                <option value="*">*</option>
+                                                <option value="/">/</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <center>
+                                                <button class="btn btn-success" onclick="add()" id="bt-calc">Click</button>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </center>
                 </div>
             </t>
         </template>

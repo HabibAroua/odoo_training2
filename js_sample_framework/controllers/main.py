@@ -16,11 +16,17 @@ class Doc(http.Controller):
         # here in kw you can get the inputted value
         x1=int(kw['a1'])
         x2=int(kw['a2'])
+        op=kw['op']
         x= x1+x2
         print ('the sum is ',x)
+        print ('operation is ',op)
         return 'The sum is '+str(x)
 
 
     @http.route('/custom/url' , website=True , auth='public')
     def show_custom_webpage(self, **kw):
         return request.render('js_sample_framework.new_web_page', {})
+
+    @http.route('/hounaida' )
+    def showHello(self,**kw):
+        return "Hello hounaida"
