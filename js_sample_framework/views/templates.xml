@@ -23,10 +23,10 @@
                                     <tr>
                                         <td colspan="2">
                                             <select name="op" class="form-control">
-                                                <option value="+">+</option>
-                                                <option value="-">-</option>>
-                                                <option value="*">*</option>
-                                                <option value="/">/</option>
+                                                <option value="+"><center>PLUS</center></option>
+                                                <option value="-"><center>MINUS</center></option>>
+                                                <option value="*"><center>MULTIPLE</center></option>
+                                                <option value="/"><center>DIVISE</center></option>
                                             </select>
                                         </td>
                                     </tr>
@@ -44,4 +44,11 @@
                 </div>
             </t>
         </template>
+     <template id="new_web_page1" name="Habib1" >
+            <t t-call="website.layout">
+                <div class="container">
+                    Hola Amgos
+                </div>
+            </t>
+     </template>
 </odoo>

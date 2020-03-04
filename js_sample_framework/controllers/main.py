@@ -38,6 +38,10 @@ class Doc(http.Controller):
     def show_custom_webpage(self, **kw):
         return request.render('js_sample_framework.new_web_page', {})
 
+    @http.route('/custom/url1' , website=True , auth='public')
+    def show_url_page(self, **kw):
+        return request.render('js_sample_framework.new_web_page1', {})
+
     @http.route('/hounaida' )
     def showHello(self,**kw):
         return "Hello hounaida"
