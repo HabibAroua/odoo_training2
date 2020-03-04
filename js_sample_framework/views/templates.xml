@@ -125,12 +125,13 @@
      </template>
 
     <template id="new_web_page2" name="Habib1" >
-            <t t-call="website.layout">
-                <div class="container">
-                    <h1>Test</h1>
-                    <p>The value is : </p>
-                    <p><span t-esc="name"/></p>
-                </div>
-            </t>
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Test</h1>
+                <p>The value is : </p>
+                <p><span t-esc="name"/></p>
+            </div>
+        </t>
     </template>
+    
 </odoo>
