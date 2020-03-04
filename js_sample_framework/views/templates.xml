@@ -84,19 +84,19 @@
 
                         function dragStart(event)
                         {
-                          event.dataTransfer.setData("Text", event.target.id);
-                          document.getElementById("demo").innerHTML = "Started to drag the p element";
+                            event.dataTransfer.setData("Text", event.target.id);
+                            document.getElementById("demo").innerHTML = "Started to drag the p element";
                         }
 
                         function dragEnd(event)
                         {
-                          document.getElementById("demo").innerHTML = "Finished dragging the p element.";
-                          document.getElementById('dragtarget').value="Habib";
+                            document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+                            document.getElementById('dragtarget').value="Habib";
                         }
 
                         function allowDrop(event)
                         {
-                          event.preventDefault();
+                            event.preventDefault();
                         }
 
                         function drop(event)
