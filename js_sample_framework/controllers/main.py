@@ -9,7 +9,7 @@ class Doc(http.Controller):
 
     @http.route('/habib' , type="http")
     def funct(self, **kw):
-        return "Holal Amigos"
+        return "Hola Amigos"
 
     @http.route('/test/path', type='http', methods=['POST'],csrf=False)
     def test_path(self, **kw):
