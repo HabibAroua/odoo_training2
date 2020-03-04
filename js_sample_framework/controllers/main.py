@@ -42,6 +42,7 @@ class Doc(http.Controller):
     def show_url_page(self, **kw):
         return request.render('js_sample_framework.new_web_page1', {})
 
-    @http.route('/hounaida' )
-    def showHello(self,**kw):
-        return "Hello hounaida"
+    @http.route('/custom/url2' , website=True , auth='public')
+    def show_url_page1(self, **kw):
+        name='Habib'
+        return request.render('js_sample_framework.new_web_page2', {'name': name})
