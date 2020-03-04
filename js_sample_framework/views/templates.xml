@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-        <template id="assets_backend" inherit_id="web.assets_backend">
-            <xpath expr="." position="inside">
-                <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
-            </xpath>
-        </template>
-        <template id="new_web_page" name="Habib" >
-            <t t-call="website.layout">
-                <div class="container">
-                    <center>
-                        <div>
-                            <form method="POST" action="/test/path" id="panda" name = "myForm">
-                                <table>
-                                    <tr>
-                                        <td colspan="2"><center>Calculate</center></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="number" name="a1" id="a1" placeholder="Number 1" class="form-control"  /></td>
-                                        <td><input type="number" name="a2" id="a2" placeholder="Number 2" class="form-control"  /></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <select name="op" class="form-control">
-                                                <option value="+"><center>PLUS</center></option>
-                                                <option value="-"><center>MINUS</center></option>>
-                                                <option value="*"><center>MULTIPLE</center></option>
-                                                <option value="/"><center>DIVISE</center></option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <center>
-                                                <button class="btn btn-success" onclick="add()" id="bt-calc">Click</button>
-                                            </center>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </div>
-                    </center>
-                </div>
-            </t>
-        </template>
-     <template id="new_web_page1" name="Habib1" >
-            <t t-call="website.layout">
-                <div class="container">
-                    <p id="phrase">Drag the p element back and forth between the two rectangles:</p>
-
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="js_sample_framework/static/src/js/framework_sample.js"></script>
+        </xpath>
+    </template>
+    <template id="new_web_page" name="Habib" >
+        <t t-call="website.layout">
+            <div class="container">
+                <center>
+                    <div>
+                        <form method="POST" action="/test/path" id="panda" name = "myForm">
+                            <table>
+                                <tr>
+                                    <td colspan="2"><center>Calculate</center></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" name="a1" id="a1" placeholder="Number 1" class="form-control"  /></td>
+                                    <td><input type="number" name="a2" id="a2" placeholder="Number 2" class="form-control"  /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <select name="op" class="form-control">
+                                            <option value="+"><center>PLUS</center></option>
+                                            <option value="-"><center>MINUS</center></option>>
+                                            <option value="*"><center>MULTIPLE</center></option>
+                                            <option value="/"><center>DIVISE</center></option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <center>
+                                            <button class="btn btn-success" onclick="add()" id="bt-calc">Click</button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </t>
+    </template>
+    <template id="new_web_page1" name="Habib1" >
+        <t t-call="website.layout">
+            <div class="container">
+                <p id="phrase">Drag the p element back and forth between the two rectangles:</p>
                     <div
                             id="id0" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"
                             style="float: left; width: 500px; height: 500px; margin: 15px; padding: 10px; border: 1px solid #aaaaaa;"
