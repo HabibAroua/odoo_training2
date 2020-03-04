@@ -47,7 +47,80 @@
      <template id="new_web_page1" name="Habib1" >
             <t t-call="website.layout">
                 <div class="container">
-                    Hola Amgos
+                    <p id="phrase">Drag the p element back and forth between the two rectangles:</p>
+
+                    <div
+                            id="id0" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"
+                            style="float: left; width: 500px; height: 500px; margin: 15px; padding: 10px; border: 1px solid #aaaaaa;"
+                    >
+                        <input type="text" placeholder="Text" name="value" ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget" />
+                    </div>
+
+                    <div
+                            id="id1" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"
+                            style="float: left; width: 500px; height: 500px; margin: 15px; padding: 10px; border: 1px solid #aaaaaa;"
+                    >
+
+                    </div>
+
+                    <div
+                            id="id2" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"
+                            style="float: left; width: 500px; height: 500px; margin: 15px; padding: 10px; border: 1px solid #aaaaaa;"
+                    ></div>
+
+                    <p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+                    <p id="demo"></p>
+
+                    <button onclick="hello()">Click</button>
+
+                    <script>
+
+                        function hello()
+                        {
+                            var x = document.getElementById("dragtarget").value;
+                            alert(x);
+                        }
+
+                        function dragStart(event)
+                        {
+                          event.dataTransfer.setData("Text", event.target.id);
+                          document.getElementById("demo").innerHTML = "Started to drag the p element";
+                        }
+
+                        function dragEnd(event)
+                        {
+                          document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+                          document.getElementById('dragtarget').value="Habib";
+                        }
+
+                        function allowDrop(event)
+                        {
+                          event.preventDefault();
+                        }
+
+                        function drop(event)
+                        {
+                            if(event.target.id =='id0')
+                            {
+                                alert('the main ID');
+                            }
+                            else
+                            {
+                                if(event.target.id == 'id1')
+                                {
+                                    alert('The first ID');
+                                }
+                                else
+                                {
+                                    alert('The second ID');
+                                }
+                            }
+                            event.preventDefault();
+                            var data = event.dataTransfer.getData("Text");
+                            event.target.appendChild(document.getElementById(data));
+                        }
+                    </script>
                 </div>
             </t>
      </template>
