@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+    <!--
+        <recod model="ir.ui.view" id="nursery_plant_form">
+            <field name="name">Plant form view</field>
+            <field name="model">nursery.plant</field>
+            <field name="arch" type="xml">
+                <form string="Plant">
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Pant name" />
+                        </h1>
+                        <notebook>
+                            <page string="Shop">
+                                <group>
+                                    <field name="price" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </recod>
+        -->
+
+        <record id="action_nursery_plant" model="ir.actions.act_window">
+            <field name="name">Plants</field>
+            <field name="res_model">nursery.plant</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="plant_nursery_root" name="plant_nursery_menu" />
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="nursery_root_menu" name="Plants" parent="plant_nursery_root" action="action_nursery_plant" sequence="1"/>
+    </data>
+</odoo>

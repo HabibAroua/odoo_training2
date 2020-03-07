@@ -129,7 +129,7 @@
             <div class="container">
                 <h1>Test</h1>
                 <p>The value is : </p>
-                <p><span t-esc="name"/></p>
+                <p><span t-raw="name"/></p>
             </div>
         </t>
     </template>
