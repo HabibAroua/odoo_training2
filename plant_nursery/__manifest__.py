@@ -7,7 +7,11 @@
     'data' : [
         #'security/ir/model.access.csv',
         #'data/data.xml',
-        'views.xml',
+        #'views.xml',
+        #'complex.xml',
+        'actions.xml',
+        'orders_views.xml',
+        'plants_views.xml',
     ],
     'demo': [
         #'data/demo.xml',

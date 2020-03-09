@@ -31,10 +31,17 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record id="action_nursery_order" model="ir.actions.act_window">
+            <field name="name">Order</field>
+            <field name="res_model">nursery.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
         <menuitem id="plant_nursery_root" name="plant_nursery_menu" />
 
         <!-- This Menu Item must have a parent and an action -->
         <menuitem id="nursery_root_menu" name="Plants" parent="plant_nursery_root" action="action_nursery_plant" sequence="1"/>
+        <menuitem id="nursery_order_root_menu" name="Order" parent="plant_nursery_root" action="action_nursery_order" sequence="1"/>
     </data>
 </odoo>
