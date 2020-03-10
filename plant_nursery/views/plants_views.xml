@@ -28,5 +28,33 @@
             </form>
         </field>
     </record>
+    <record id="plant_kanban" model="ir.ui.view">
+     <field name="name">plant_kanban</field>
+      <field name="model">nursery.plant</field>
+     <field name="arch" type="xml">
+        <kanban>
+            <field name="name"/>
+            <field name="price" />
+            <field name="order_ids" />
+            <field name="order_count" />
+            <field name="number_in_stock" />
+         <templates>
+             <t t-name="kanban-box">
+                 <div class="oe_kanban_global_click">
+                     <field name="name"/>
+                     <div class="oe_kanban_details">
+                         <ul>
+                             <li> <field name="price" /></li>
+							 <li><field name="order_ids" /></li>
+							 <li><field name="order_count" /></li>
+                             <li><field name="order_count" /></li>
+                         </ul>
+                     </div>
+                 </div>
+             </t>
+         </templates>
+        </kanban>
+     </field>
+    </record>
 </odoo>
 <!-- https://github.com/mart-e/odoodays-2017 -->

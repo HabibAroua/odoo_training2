@@ -6,7 +6,7 @@
     <record model="ir.actions.act_window" id="action_nursery_plant">
         <field name="name">Plants</field>
         <field name="res_model">nursery.plant</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
     <record model="ir.actions.act_window" id="action_nursery_customer">
