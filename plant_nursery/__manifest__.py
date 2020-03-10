@@ -9,9 +9,9 @@
         #'data/data.xml',
         #'views.xml',
         #'complex.xml',
-        'actions.xml',
-        'orders_views.xml',
-        'plants_views.xml',
+        'views/actions.xml',
+        'views/orders_views.xml',
+        'views/plants_views.xml',
     ],
     'demo': [
         #'data/demo.xml',
