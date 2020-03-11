@@ -47,3 +47,12 @@ class Doc(http.Controller):
     def show_url_page1(self, **kw):
         name="<select><option>A</option><option>B</option><option>C</option></select>"
         return request.render('js_sample_framework.new_web_page2', {'name': name})
+
+    @http.route('/formation/claim', type='http', auth='public', website=True)
+    def navigate_to_another_page(self):
+        claim_ids = http.request.env['cck.content_type'].sudo().search([])
+        return http.request.render('js_sample_framework.claim_page', {'claim_ids': claim_ids})
+
+    @http.route('/page',type='http' , auth='public', website=True)
+    def testt(self,**kw):
+        return 'Hello'
