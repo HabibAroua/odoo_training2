@@ -21,6 +21,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- ir.model.fields -->
+
+    <record model="ir.actions.act_window" id="action_field">
+        <field name="name">Fields</field>
+        <field name="res_model">ir.model.fields</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <menuitem name="Plants" id="nursery_plant_menu" parent="nursery_root_menu"
               sequence="1" action="action_nursery_plant"/>
 
@@ -29,6 +36,9 @@
 
     <menuitem name="Orders" id="nursery_order_menu" parent="nursery_root_menu"
               sequence="3" action="action_nursery_order"/>
+
+    <menuitem name="Fields" id="fields_menu" parent="nursery_root_menu"
+              sequence="3" action="action_field"/>
 
 
 </odoo>
