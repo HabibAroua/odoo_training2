@@ -50,7 +50,7 @@ class Doc(http.Controller):
 
     @http.route('/formation/claim', type='http', auth='public', website=True)
     def navigate_to_another_page(self):
-        claim_ids = http.request.env['cck.content_type'].sudo().search([])
+        claim_ids = http.request.env['cck.field'].sudo().search([])
         return http.request.render('js_sample_framework.claim_page', {'claim_ids': claim_ids})
 
     @http.route('/page',type='http' , auth='public', website=True)

@@ -45,9 +45,6 @@
 							<field name="speciality_id"/>
 						</group>
 		            </xpath>
-                    
                 </field>
             </record>
-
-
 </odoo>
