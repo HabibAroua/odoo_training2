@@ -53,6 +53,11 @@ class Doc(http.Controller):
         claim_ids = http.request.env['cck.field'].sudo().search([])
         return http.request.render('js_sample_framework.claim_page', {'claim_ids': claim_ids})
 
+    @http.route('/formation/content_type', type='http', auth='public', website=True)
+    def navigate_to_another_page(self):
+        claim_ids = http.request.env['cck.content_type'].sudo().search([])
+        return http.request.render('js_sample_framework.content_type', {'claim_ids': claim_ids})
+
     @http.route('/page',type='http' , auth='public', website=True)
     def testt(self,**kw):
         return 'Hello'

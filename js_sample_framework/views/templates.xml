@@ -154,4 +154,29 @@
       </t>
     </template>
 
+    <template id="content_type" name="Les réclamations">
+      <t t-call="website.layout">
+        <div class="oe_structure">
+          <div class="container">
+            <center><h3>All contents type</h3></center>
+              <h5>Element</h5>
+              <br></br>
+              <t t-foreach="claim_ids" t-as="o">
+                  <strong>The content name is : </strong>
+                  <span t-esc="o.content_type_name" />
+                  <strong>the field are : </strong>
+                  <br></br>
+                  *********
+                  <t t-foreach="o.field_id" t-as="f" >
+                      <input type="text" name="'f.field_value'" t-att-value='f.field_value'  t-att-placeholder='f.field_value' />
+                      <span t-esc="f.field_value" />
+                  </t>
+                  **********
+                  <br></br>
+            </t>
+          </div>
+        </div>
+      </t>
+    </template>
+
 </odoo>
